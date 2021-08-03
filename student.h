@@ -9,7 +9,7 @@ class Student
 {
 public:
 	Student(string studentID, string firstName, string lastName, string emailAddress, int age, int* courseDays, DegreeProgram degreeProgram);
-	
+
 	//Destructor
 	~Student();
 
