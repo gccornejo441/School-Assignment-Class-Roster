@@ -77,7 +77,8 @@ float Student::GetAverageDaysInCourses()
 	for (int i = 0; i < 3; i++) {
 		sum += courseDays[i];
 	}
-	return static_cast<float>(sum) / static_cast<float>(3);
+	float totalDays = 3;
+	return sum / totalDays;
 }
 
 
@@ -107,7 +108,7 @@ void Student::SetEmailAddress(string emailAddress)
 
 int Student::emailValidation()
 {
-	if (emailAddress.find("@") == string::npos || emailAddress.find(".") == string::npos || emailAddress.find(" ") != string::npos ) { // no "@" found
+	if (emailAddress.find("@") == string::npos || emailAddress.find(".") == string::npos || emailAddress.find(" ") != string::npos) { // no "@" found
 		return 1;
 	}
 	return 0;
@@ -139,7 +140,7 @@ void Student::SetDegreeProgram(DegreeProgram degreeProgram)
 	this->degreeProgram = degreeProgram;
 }
 
-void Student::print() 
+void Student::print()
 {
 	int i = 0;
 	string degreeOption = "";
