@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 Roster::Roster()
 {
 }
@@ -67,28 +66,23 @@ void Roster::printAll()
 void Roster::printAverageDaysInCourse(string studentID)
 {
 	// E3d.  public void printAverageDaysInCourse(string studentID)  that correctly prints a 
-	// student’s average number of days in the three courses.The student is identified by
+	// studentâ€™s average number of days in the three courses.The student is identified by
 	// the studentID parameter.
 
-	int stuIDX;
+	int STUDENT_INDEX;
 
 	for (int i = 0; i < sizeOfRoster; i++) {
 		if (classRosterArray[i]->GetStudentID() == studentID) {
-			stuIDX = i;
+			STUDENT_INDEX = i;
 		}
 	}
-	cout << "Student " << classRosterArray[stuIDX]->GetStudentID() << " "
-		<< " has averaged "
-		<< classRosterArray[stuIDX]->GetAverageDaysInCourses()
-		<< " day(s) per course for the last three courses." << endl;
+
+	cout << "StudentID: " << classRosterArray[STUDENT_INDEX]->GetStudentID() << " averaged " << classRosterArray[STUDENT_INDEX]->GetAverageDaysInCourses() << " days for every three courses." << endl;
 }
 
 void Roster::printInvalidEmails()
 {
-	// E3e.  public void printInvalidEmails() that verifies student email addresses and
-	// displays all invalid email addresses to the user.
 	int i = 0;
-	cout << "Invalid email addresses:" << endl;
 	for (i = 0; i < sizeOfRoster; i++) {
 		if (classRosterArray[i]->emailValidation() == 1) {
 			cout << classRosterArray[i]->GetEmailAddress() << endl;
@@ -107,22 +101,17 @@ void Roster::printByDegreeProgram(DegreeProgram byDegreeProgram)
 
 void Roster::printByDegreeProgram()
 {
-	int j = 0;
 	for (int i = 0; i < sizeOfRoster; i++) {
-		for (j = 0; j < sizeOfRoster; j++) {
-			if (classRosterArray[i]->GetDegreeProgram() == NETWORK) {
-				classRosterArray[i]->print();
-			}
-		}
-		for (j = 0; j < sizeOfRoster; j++) {
-			if (classRosterArray[i]->GetDegreeProgram() == SECURITY) {
-				classRosterArray[i]->print();
-			}
-		}
-		for (j = 0; j < sizeOfRoster; j++) {
-			if (classRosterArray[i]->GetDegreeProgram() == SOFTWARE) {
-				classRosterArray[i]->print();
-			}
+		switch (classRosterArray[i]->GetDegreeProgram()) {
+		case NETWORK:
+			classRosterArray[i]->print();
+			break;
+		case SECURITY:
+			classRosterArray[i]->print();
+			break;
+		case SOFTWARE:
+			classRosterArray[i]->print();
+			break;
 		}
 	}
 }
