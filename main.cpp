@@ -21,7 +21,7 @@ int main() {
 	"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
 	"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
 	"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
-	"A5,Gabriel,Cornejo,gcornej@wgu.edu,26,20,20,20,SOFTWARE" }; 
+	"A5,Gabriel,Cornejo,gcornej@wgu.edu,26,20,20,20,SOFTWARE" };
 
 	DegreeProgram degreeProgram;
 
@@ -29,7 +29,7 @@ int main() {
 
 	string studentID;
 
-	cout << "Adding Students to Roster: ";
+	cout << "Adding students: ";
 	for (int i = 0; i < sizeof(studentData) / sizeof(studentData[i]); i++) {
 		string input = studentData[i];
 		istringstream ss(input);
@@ -54,7 +54,8 @@ int main() {
 		else {
 			return 0;
 		}
-		cout << "Calling add for " << rAddDat[0] << ", ";
+
+		cout << rAddDat[0] << ", ";
 		classRoster.add(rAddDat[0],
 			rAddDat[1],
 			rAddDat[2],
@@ -68,10 +69,12 @@ int main() {
 	cout << endl;
 
 	// F4.Convert the following pseudo code to complete the rest of the  main() function:
-	cout << endl << "Calling printAll():" << endl;
+	cout << endl << "Stuents in roster:" << endl;
 	classRoster.printAll();
+	cout << endl; // This is to create spacing for better readability.
 
-	cout << endl << "Calling printInvalidEmails():" << endl;
+	// This function "printInvalidEmails()" consoles out invalid emails.
+	cout << "Invalid email formats:" << endl;
 	classRoster.printInvalidEmails();
 
 	//loop through classRosterArray and for each element:
